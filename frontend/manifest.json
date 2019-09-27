@@ -1,0 +1,25 @@
+{
+  "name": "GreenwichMastersProject",
+  "version": "1.0.01",
+  "description": "A very simple extension for phishing detection without the risk of 3rd party APIs",
+  "permissions": ["activeTab","declarativeContent", "storage", "webNavigation"],
+  "background": {
+    "scripts": [
+      "js/jquery.js",
+      "js/randomforest.js",
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "Icon1.png",
+    "default_popup": "plugin_ui.html"
+  },
+  "content_scripts":[
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["js/jquery.js","js/features.js"]
+    }
+  ],
+  "manifest_version": 2
+}
